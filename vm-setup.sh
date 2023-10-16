@@ -31,6 +31,10 @@ alias ll='ls -lh'
 alias la='ls -lah'
 alias lh=la
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 # Git aliases - based on http://www.catonmat.net/blog/git-aliases/
 alias g=git
 alias ga='git add'
@@ -45,6 +49,7 @@ alias gc='git checkout'
 alias gci='git commit'
 alias gcl='git clone'" >> ~/.bashrc
 
+git config --global init.defaultBranch main
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.rb rebase
