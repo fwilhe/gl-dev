@@ -50,6 +50,7 @@ alias gci='git commit'
 alias gcl='git clone'" >> ~/.bashrc
 
 git config --global init.defaultBranch main
+git config --global --add --bool push.autoSetupRemote true
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.rb rebase
