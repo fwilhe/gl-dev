@@ -8,6 +8,8 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 
 echo "
 
+export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]user@dev\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 if command -v nala &> /dev/null; then
   alias i='sudo nala install'
   alias I='sudo nala install --assume-yes'
