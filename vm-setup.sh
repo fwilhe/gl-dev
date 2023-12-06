@@ -6,9 +6,18 @@ git config --global user.email 2292245+fwilhe@users.noreply.github.com
 
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
+mkdir -p ~/.bin
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh --output ~/.bin/git-prompt.sh
+
 echo "
 
 export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]user@dev\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+if [ -f ~/git-prompt.sh ]; then
+	. ~/.bin/git-prompt.sh
+	export GIT_PS1_SHOWDIRTYSTATE=1
+	export PS1='\w$(__git_ps1 " (%s)")\$ '
+fi
 
 if command -v nala &> /dev/null; then
   alias i='sudo nala install'
