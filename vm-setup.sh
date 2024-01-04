@@ -4,8 +4,6 @@ set -eux -o pipefail
 git config --global user.name "Florian Wilhelm"
 git config --global user.email 2292245+fwilhe@users.noreply.github.com
 
-sudo update-alternatives --set editor /usr/bin/vim.basic
-
 mkdir -p ~/.bin
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh --output ~/.bin/git-prompt.sh
 
